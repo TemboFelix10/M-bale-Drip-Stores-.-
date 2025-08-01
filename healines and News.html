@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTN Super League News</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #010499;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      background: #ffcc00;
+      color: #000;
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .news-container {
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      position: relative;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+      background: white;
+      margin-top: 20px;
+    }
+
+    .news-slider {
+      display: flex;
+      flex-direction: column;
+      animation: slideNews 30s linear infinite;
+    }
+
+    .news-item {
+      padding: 15px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    @keyframes slideNews {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100%); }
+    }
+
+    .news-item:hover {
+      background: #ffe680;
+    }
+
+    a {
+      color: #0047ab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚽ MTN Zambia Super League Headlines</h1>
+
+  <div class="news-container">
+    <div class="news-slider" id="newsSlider">
+      <!-- Headlines will be inserted here by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    const headlines = [
+      "Nchanga Rangers sign 4 new players including Jacob Kaunda.",
+      "Kabwe Warriors strengthen squad for 2025/26 season.",
+      "Power Dynamos begin pre-season training in South Africa.",
+      "Green Buffaloes appoint Aggrey Chiyangi as head coach.",
+      "Chipo Sondashi rejoins FC MUZA after Green Buffaloes spell.",
+      "John Kosamu set for Green Buffaloes return from Zanaco.",
+      "Sunset Stadium under renovation ahead of new season.",
+      "Augustine Mulenga trains with NAPSA Stars.",
+      "Larry Bwalya: 'I want to help NAPSA win the league.'",
+      "ZESCO United win the 2025 ABSA Cup title.",
+      "VAR to be introduced across the league for 2025/26.",
+      "Power Dynamos are defending champions with 8th title.",
+      "Most Nkana players have been fined others banned because of vandalism",
+      "Nkana has been fined about 50,000 dollars",
+      "Copper Queens trashed 5-0 to Nigerian women",
+      "Muza FC owner is the new FAZ boss/president",
+      "MTN Super league to be upgraded to Zambian Premier League",
+    ];
+
+    const slider = document.getElementById('newsSlider');
+
+    // Add each headline twice for seamless looping
+    for (let i = 0; i < 2; i++) {
+      headlines.forEach(text => {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.textContent = text;
+        slider.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
